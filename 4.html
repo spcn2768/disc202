@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        k = 0
+        function createLi(){
+            ul_list = document.getElementById("emptyLi");
+            ul_list.innerHTML += "<li id=li"+k+" onclick=setColor('li"+k+"')>  </li>";
+            k+=1
+        }
+        function setColor(a){
+            var box = document.getElementById(a);
+            box.style.backgroundColor = "orange";
+        }
+
+    </script>
+</head>
+<body>
+    <button id="btn" onclick="createLi()">click!</button>
+    <ul id="emptyLi">
+    </ul>
+</body>
+</html>

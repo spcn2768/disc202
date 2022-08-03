@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function User(name,age){
+            this.name = name;
+            this.age = age;
+            this.getAge = function() {return age};
+            this.getName = function() {return name};
+            this.setAge = function(a){age=a};
+        }
+        var jinsu = new User('Jinsu',21);
+        var chulsu = new User('Chulsu',20);
+        function calc(button){
+            ans = (jinsu.getAge() + chulsu.getAge())/2;
+            jinsu.setAge(jinsu.getAge()+1);
+            chulsu.setAge(chulsu.getAge()+1);
+            const btn = document.getElementById(button);
+            btn.innerText = ans
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button id='btn1' onclick='calc("btn1")'>calc</button>
+    <button id='btn2' onclick='calc("btn2")'>calc</button>
+    <button id='btn3' onclick='calc("btn3")'>calc</button>
+    
+</body>
+</html>

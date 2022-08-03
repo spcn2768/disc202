@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        mydata = [1,2,3,4,5];
+        rand_1_100 = Math.floor(( Math.random () * (100 - 1) ) + 1);
+
+        for(i=0; i<rand_1_100; i++) {
+            mydata.push(Math.floor(( Math.random () * (100 - 1) ) + 1))
+        }
+        len = mydata.length
+        summation = mydata.reduce(function add(sum, currValue) {
+            return sum + currValue;
+        }, 0);
+        average = summation / len;
+        mydata.push(len)
+        mydata.push(summation)
+        mydata.push(average)
+
+        alert('length: '+len+' sum: '+summation+' average: '+average)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        sqrt2try = []
+        trialnum = []
+        sqrt2val = []
+        high = 5
+        low = 1
+        delta = 0.00000001
+        for ( k=0 ; k<100 ; k++ ) {
+            sqrt2try[k] = (high + low)/2
+            sqrx = sqrt2try[k] * sqrt2try[k] * sqrt2try[k]
+            trialnum[k] = k+1
+            sqrt2val[k] = Math.cbrt(10)
+            if ( sqrx > 10 ) high = sqrt2try[k]
+            else if ( sqrx < 10 ) low = sqrt2try[k]
+            document.write("<h1> trial : " ,trialnum[k]," value : ",sqrt2try[k],"</h1>")
+            if ( Math.abs(10-sqrx) < delta ) break
+        }
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+
+    </h1>
+    
+</body>
+</html>
