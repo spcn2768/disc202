@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quing Ming's Web Programming</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+    <script src="./js/move.js"></script>
+    <script src="./js/terminal.js"></script>
+    <script src="./js/apple.js"></script>
+</head>
+
+<body>
+    <!-- Home Page -->
+    <div id="home">
+        <h1 class="greeting">BY SPACE</h1>
+        <button class="start_btn" onclick="moveTo('home', 'selectPage');">PLAY</button>
+    </div>
+
+    <!-- Select Page -->
+    <div id="selectPage">
+        <header id="logo" onclick="moveTo('selectPage', 'home');">BY SPACE</header>
+        <div class="select_wrapper">
+            <div class="game_box" onclick="moveTo('selectPage', 'terminalPage'); focusMyLog();">Terminal</div>
+            <div class="game_box" onclick="moveTo('selectPage', 'appleStoreGamePage'); setInitGameData();">Apple Game
+            </div>
+            <div class="game_box">Comming Soon!</div>
+        </div>
+    </div>
+
+    <!-- Terminal Page -->
+    <div id="terminalPage">
+        <header id="logo" onclick="deleteTerminal(); moveTo('terminalPage', 'home');">BY SPACE</header>
+        <div class="terminal">
+            <header class="terminal_header">
+                <div class="left_button_wrapper header_space">
+                    <div class="terminal_button red"></div>
+                    <div class="terminal_button yellow"></div>
+                    <div class="terminal_button green"></div>
+                </div>
+                <div class="terminal_title">by@MacBook-Pro: ~/Desktop/oh-my-zsh (zsh)</div>
+                <div class="header_space"></div>
+            </header>
+            <div class="terminal_wrapper">
+                <div class="terminal_info">% Welcome to BY#Log terminal! %</div>
+                <div class="terminal_info">-------------------------------</div>
+                <div class="terminal_info">COMMANDS</div>
+                <div class="command_prompt">- whoami</div>
+                <div class="command_prompt">- pwd</div>
+                <div class="command_prompt">- ls</div>
+                <div class="command_prompt">- cd</div>
+                <div class="command_prompt">- clear</div>
+                <div class="command_prompt">- exit</div>
+                <div class="terminal_info">-------------------------------</div>
+                <div class="current_log">
+                    <span class="this_is_me">BY#log:~$</span>
+                    <input type="text" id="first_terminal_input" class="terminal_input" onkeyup="onKeyUpTerminalInput();"
+                        autofocus>
+                </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Apple Store Game -->
+    <div id="appleStoreGamePage">
+        <header id="logo" onclick="setInitGameData(); moveTo('appleStoreGamePage', 'home');">BY SPACE</header>
+        <div id="cheat" onclick="cheat();"></div>
+        <div class="apple_store_game_wrapper">
+            <header onclick="gainMoney();" class="game_header">
+                <div class="coin_image"></div>
+                <div id="current_money" class="current_money"></div>
+            </header>
+            <div class="apple_store_game_content">
+                <div class="content_top_wrapper">
+                    <div id="item_image" class="item_image appleWatch"></div>
+                    <div class="wrapper_without_image">
+                        <div id="current_item" class="item"></div>
+                        <div class="percentage_wrapper">
+                            <span id="current_success" class="success"></span>
+                            <span id="current_degration" class="degration"></span>
+                            <span id="current_destruction" class="destruction"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cost_wrapper">
+                    <div class="coin_image"></div>
+                    <div id="cost"></div>
+                </div>
+                <div id="enhance_result"></div>
+                <button class="enhance" onclick="enhance();">강화하기</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
