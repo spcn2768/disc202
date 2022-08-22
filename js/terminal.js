@@ -43,7 +43,7 @@ const onKeyUpTerminalInput = () => {
       const pwd = document.createElement("span");
 
       newPwdLog.classList.add("past_log");
-      pwd.innerHTML = "https://github.com/taulmax/quing_ming";
+      pwd.innerHTML = "https://spcn2768.github.io/disc202/";
       newPwdLog.appendChild(pwd);
 
       terminalWrapper.appendChild(newPwdLog);
