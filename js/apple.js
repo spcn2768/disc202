@@ -58,9 +58,9 @@ const itemInfo = {
   macPro: {
     title: "맥 프로",
     className: "macPro",
-    success: "-",
-    degration: "-",
-    destruction: "-",
+    success: "?",
+    degration: "?",
+    destruction: "?",
     clickMoney: 500,
     cost: "-",
   },
